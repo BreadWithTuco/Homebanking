@@ -1,0 +1,10 @@
+select{
+    width:  20vw;
+    padding: .3rem;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+form{
+    min-height: 60vh;
+}

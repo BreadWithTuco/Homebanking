@@ -1,0 +1,195 @@
+
+
+
+:root{
+    --icon-width: 2rem;
+    --icon-height: 2rem;
+    --color-shadow-black: rgba(0, 0, 0, 0.196);
+    --color-primary: #0c1224;
+    --color-secondary: #F593C6;
+    --color-terciary: #e1e1ff;
+    --color-body: #f7f7f7;
+    --color-letter-secondary: #888888;
+}
+
+.row {
+    --bs-gutter-x: 0;
+
+}
+
+
+
+#logoPegasus{
+    width: 4rem;
+}
+#logoPegasus2{
+    width: 7vw;
+}
+
+main{
+    min-height: 100vh;
+}
+body{
+    background-color: var(--color-body);
+    
+}
+footer{
+    background-color: var(--color-primary);
+    min-height: 30vh;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+}
+nav{
+    background-color: var(--color-primary);
+}
+nav a{
+    color: white !important;
+    text-decoration: none;
+    border-bottom: 0px 1px 1px black !important;
+}
+
+h4{
+    font-size: 1rem !important;
+}
+h6,h5,h4{
+    margin-bottom: 0;
+}
+p{
+ margin-top: 0;margin-bottom: 0;
+}
+
+.borderRadius{
+    border-radius: .3rem;
+}
+
+#leftAccount{
+    min-height: 20vh;
+}
+#midAccount{
+    min-height: 20vh;
+}
+#rigthAccount{
+    min-height: 20vh;
+}
+
+#client{
+    min-height: 15vh;
+}
+#client>div>div>div>p{
+    font-size: .8rem;
+}
+#userIcon{
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+#clientProfile{
+    color: white;
+}
+
+#lineaNav{
+    width: 5rem;
+    border-bottom: 3px solid white;
+}
+
+.navbar-toggler {
+    border-color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.buttonCreate{
+    padding: .4rem;
+    background-color: var(--color-terciary);
+    border: none;
+    border-radius: .5rem;
+    font-size: .8rem;
+    width: 5vw;
+}
+
+#balance{
+    font-size: 1.2rem;
+}
+
+#cvu{
+    background-color: var(--color-secondary);
+    border: none;
+    font-size: .8rem;
+}
+
+#accounts{
+    border-collapse: collapse;
+}
+
+.lastTransactions{
+    color: black;
+    height: 6vh;
+}
+.lastTransactions:hover{
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left: 4px solid black; 
+}
+.dateTransaction{
+    color: var(--color-letter-secondary);
+}
+
+.boxShadow{
+    box-shadow: 0 0 .8rem var(--color-shadow-black);
+}
+.clientTransactions{
+    min-height: 10vh;
+}
+#transactionHeader{
+    min-height: 20vh;
+}
+.cards{
+    height: 10vh;
+    transition: 1s;
+    background-color: var(--color-primary);
+}
+.cards:hover{
+    height: 12vh;
+    transition: 1s;
+}
+.cardTypeLogo{
+    width: 70px;
+    height: 70px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.icon{
+    width: var(--icon-width);
+    height: var(--icon-height);
+}
+.accountBalanceOculted{
+    display: none;
+}
+.accountBalance{
+    display: block;
+}
+.eyeNone{
+    display: none;
+}
+.openEye,.closedEye{
+    cursor: pointer;
+}
+
+#chart-container>span>svg:nth-last-child(){
+    display: none;
+}
+
+
+
+@media (min-width: 900px) and (max-width: 1400px){
+    
+}

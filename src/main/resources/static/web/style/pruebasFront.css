@@ -1,0 +1,31 @@
+:root{
+    --first-color: rgb(6 21 31);
+    --second-color: rgb(0 197 177);
+    --black-color: #000407;
+}
+
+
+body{
+    background-color: var(--first-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 1.5rem;
+    width: 9.5rem;
+    height: 4rem;
+    border-radius: 4px;
+    background-color: var(--second-color);
+    border: none;
+}
+
+input:hover{
+    box-shadow: 0 0 .5rem var(--second-color), 0 0 .1rem rgba(255, 255, 255, 0.676); 
+}

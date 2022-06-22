@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style/account.css">
+    <link rel="stylesheet" href="./style/graphic.css">
+</head>
+
+<body>
+    <div class="row" id="app">
+
+        <nav
+            class="col-12 d-flex justify-content-center align-items-center navbar navbar-expand-lg navbar-light ps-5 pe-5">
+            <div class="d-flex align-items-center container-fluid">
+                <img class="" src="/assets/LOGO-HOMEBANKING-SINFONDO-BLANCO.png" alt="logoPegasus" id="logoPegasus">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="ps-5 collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./accounts.html">Accounts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./card.html">Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./loan-application.html">Loans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-5">
+                        <div class="d-flex gap-3 align-items-center" id="clientProfile">
+                            <div class="col-md-12 d-flex align-items-center justify-content-center" id="userIcon">
+                                <p class="fw-bold">{{client.firstName?.slice(0,1).toUpperCase()}}</p>
+                                <p class="fw-bold">{{client.lastName?.slice(0,1).toUpperCase()}}</p>
+                            </div>
+                            <div class="d-flex flex-column justify-content-center">
+                                <h4>{{client.firstName}} {{client.lastName}}</h4>
+                                <p>{{client.email}}</p>
+                            </div>
+                        </div>
+                        <a class="d-flex justify-content-center align-items-center gap-2" href="./login.html"
+                            @click="logout" value="Log Out">
+                            <p>Log Out</p>
+                            <i class="bi bi-box-arrow-in-left" style="font-size: 1.8rem;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <main class="col-12 justify-content-center gap-5 p-5">
+            <div class="row d-flex justify-content-evenly gap-5">
+                <div class="col-md-4 d-flex flex-column gap-5">
+                    <div class="col-md-12 d-flex justify-content-around">
+                        <div class="d-flex flex-column justify-content-between align-self-end bg-white col-12 col-md-8 p-3 boxShadow borderRadius"
+                            id="client">
+                            <div class="d-flex justify-content-between align-items-center col-12">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <svg class="w-6 h-6 icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                    <p>Your Balance:</p>
+                                </div>
+                                <button class="bg-ligth rounded-3" id="cvu">CVU</button>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center fs-3 gap-2 pb-2">
+                                <div class="d-flex align-items-center gap-2" >
+                                    <p class="accountBalance">${{account[0]?.balance}}</p>
+                                    <div class="openEye" @click="occultBalance">
+                                        <i data-feather="eye"></i>
+                                    </div>
+                                    <div class="closedEye eyeNone" @click="showBalance">
+                                        <i data-feather="eye-off"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <img class="col-12" src="/assets/LOGO-HOMEBANKING-SINFONDO.png" alt="logoPegasus2"
+                            class="bg-white borderRadius boxShadow" id="logoPegasus2"> -->
+                    </div>
+                    <div class="col-md-12 boxShadow borderRadius">
+                        <div id="chart-container"></div>
+                    </div>
+                </div>
+                <div class="col-md-5 justify-content-center align-items-center text-center">
+                    <div class="col-md-12 bg-white clientTransactions borderRadius boxShadow">
+                        <div class="d-flex flex-column justify-content-between align-items-start ms-2 p-2">
+                            <div>
+                                <h5>Transactions</h5>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <p>Stack:</p>
+                                <p>{{transactions.length}}</p>
+                            </div>
+                        </div>
+                        <a href=""
+                            class="lastTransactions col-12 d-flex text-center justify-content-between align-items-center p-1 border-top ps-3 pe-4"
+                            v-for="transaction in transactions">
+                            <h6>{{transaction.description}}</h6>
+                            <div class="d-flex flex-column text-end">
+                                <p v-if="transaction.type == 'DEBIT'">-${{transaction.amount}}</p>
+                                <p v-else>+${{transaction.amount}}</p>
+                                <p class="dateTransaction">{{new Date(transaction.date).toLocaleString().slice(0,9)}}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <footer>
+
+        </footer>
+
+    </div>
+
+
+
+
+
+    <script>
+        feather.replace()
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+
+
+    <!-- GRAPHIC -->
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <script src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/jquery-fusioncharts@1.1.0/dist/fusioncharts.jqueryplugin.js"></script>
+
+
+    <script src="./js/account.js"></script>
+    <script src="./js/navAccount.js"></script>
+
+</body>
+
+</html>

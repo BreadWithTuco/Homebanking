@@ -1,0 +1,39 @@
+:root{
+    --icon-width: 4rem;
+    --icon-height: 4rem;
+
+}
+
+.row {
+    --bs-gutter-x: 0;
+
+}
+
+#logoPegasus{
+    width: 4rem;
+}
+
+body{
+    background-color: rgb(247, 247, 247);
+    
+}
+a{
+    text-decoration: none;
+}
+nav{
+    background-color: #0c1224;
+}
+nav a{
+    color: white !important;
+    text-decoration: none;
+    border-bottom: 0px 1px 1px black !important;
+}
+
+h4{
+    font-size: 1rem !important;
+    margin-bottom: 0;
+}
+p{
+ margin-top: 0;margin-bottom: 0;
+}
+

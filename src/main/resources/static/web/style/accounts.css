@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Nanum+Gothic+Coding&family=Poiret+One&display=swap');
+
+:root{
+    --icon-width: 2rem;
+    --icon-height: 2rem;
+    --color-shadow-black: rgba(0, 0, 0, 0.196);
+    --color-primary: #0c1224;
+    --color-primary-href: #18181a;
+    --color-secondary: #F593C6;
+    --color-terciary: #e1e1ff;
+    --color-body: #f7f7f7;
+    --color-letter-secondary: #888888;
+    --font-button1: 'Poiret One', cursive;
+    --font-button2: 'Nanum Gothic Coding', monospace;
+    --font-button3: 'Alegreya Sans SC', sans-serif;
+    
+
+
+
+    
+}
+
+.row {
+    --bs-gutter-x: 0;
+
+}
+
+
+
+#logoPegasus{
+    width: 4rem;
+}
+
+main{
+    min-height: 100vh;
+}
+body{
+    background-color: var(--color-body);
+    
+}
+footer{
+    background-color: var(--color-primary);
+    min-height: 30vh;
+}
+a{
+    text-decoration: none;
+}
+nav a[href="#"]{
+    border-bottom: 2px solid white;
+}
+nav{
+    background-color: var(--color-primary);
+}
+nav a{
+    color: white !important;
+    text-decoration: none;
+    border-bottom: 0px 1px 1px black !important;
+}
+
+h4{
+    font-size: 1.5rem !important;
+    margin-bottom: 0;
+}
+h6,h5{
+    margin-bottom: 0;
+}
+p{
+ margin-top: 0;margin-bottom: 0;
+}
+
+.borderRadius{
+    border-radius: .3rem;
+}
+
+#leftAccount,#rigthAccount{
+    height: 41.73rem
+}
+#midAccount>div{
+    min-height: 41.73rem;
+}
+main{
+    min-height: 100vh;
+}
+
+#client{
+    height: 20vh;
+}
+#client>div>div>div>p{
+    font-size: .8rem;
+}
+#userIcon{
+    width: 40px;
+    height: 40px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+#lineaNav{
+    width: 5rem;
+    border-bottom: 3px solid white;
+}
+
+.navbar-toggler {
+    border-color: white !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.buttonCreate{
+    font-family: var(--font-button-slab);
+    color: white;
+    padding: .4rem;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: .5rem;
+    font-size: .8rem;
+    width: 5vw;
+    transition: 1s;
+}
+.buttonCreate:hover{
+    width: 7vw;
+    transition: 1s;
+}
+
+#balance{
+    font-size: 1.2rem;
+}
+
+#cvu{
+    background-color: var(--color-secondary);
+    border: none;
+    font-size: .8rem;
+}
+
+#accounts{
+    border-collapse: collapse;
+}
+
+#lastTransactions{
+    color: black;
+}
+#lastTransactions:hover{
+    background-color: var(--color-secondary);
+}
+.dateTransaction{
+    color: var(--color-letter-secondary);
+}
+
+.boxShadow{
+    box-shadow: 0 0 .8rem var(--color-shadow-black);
+}
+.clientTransactions{
+    min-height: 10vh;
+}
+#transactionHeader{
+    min-height: 0vh;
+}
+.cards{
+    height: 10.5vh;
+    transition: 1s;
+    background-color: var(--color-primary);
+}
+.cards:hover{
+    height: 11.5vh;
+    transition: 1s;
+}
+.cardTypeLogo{
+    width: 70px;
+    height: 70px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.icon{
+    width: var(--icon-width);
+    height: var(--icon-height);
+}
+
+.buttonSeeTransactions{
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+    font-family: var(--font-button3);
+    width: 7vw;
+    transition: .5s;
+    border-radius: 2rem;
+    padding: .4rem;
+    border: none;
+    background-color: var(--color-primary);
+    /* transform: translateX(10px);
+    transition: .5s; */
+}
+/* .buttonSeeTransactions:hover>#chevronRight{
+    transform: translateX(10px);
+    transition: .5s;
+} */
+
+.chevronRightUnFocus{
+    position: relative;left: 0rem;
+    transition: .5s;
+}
+.chevronRightFocus{
+    position: relative;left: .7rem;
+    transition: .5s;
+}
+#titlePhone{
+    display: none;
+}
+
+
+
+
+@media (min-width: 414px) and (max-width: 896px){
+    .buttonSeeTransactions{
+        width: 30vw;
+    }
+    .buttonCreate{
+        width: 22vw;
+    }
+    nav a[href="#"]{
+        border-bottom: none;
+    }
+    #titlePhone{
+        display: block;
+    }
+    #navbarTogglerDemo02{
+        margin-top: 2rem !important;
+    }
+    .navbar-nav{
+        margin-left: 0 !important;
+    }
+}
+
+@media (min-width:1080px){
+    #navbarTogglerDemo02{
+        margin-left: 2rem !important;
+    }
+}
