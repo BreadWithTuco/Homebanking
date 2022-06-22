@@ -2,6 +2,7 @@ package com.mindhub.homebanking.services.implement;
 
 import com.mindhub.homebanking.dtos.TransactionDTO;
 import com.mindhub.homebanking.models.Transaction;
+import com.mindhub.homebanking.repository.ClientRepository;
 import com.mindhub.homebanking.repository.TransactionRepository;
 import com.mindhub.homebanking.services.AccountService;
 import com.mindhub.homebanking.services.ClientService;
@@ -19,8 +20,6 @@ public class TransactionServicesImpl implements TransactionService {
 
     @Autowired
     TransactionRepository transactionRepository;
-    @Autowired
-    ClientService clientService;
     @Autowired
     AccountService accountService;
 

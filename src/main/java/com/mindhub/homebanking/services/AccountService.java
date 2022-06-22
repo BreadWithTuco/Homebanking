@@ -12,7 +12,7 @@ public interface AccountService {
     Set<AccountDTO> getAccount(Authentication authentication);
     AccountDTO getAccountDTO(long id);
     Account getAccountByNumber(String number);
-    Account getAccountById(Long id);
+    Account getAccountById(long id);
     void saveAccount(Account account);
     void deleteAccount(Account account);
 }

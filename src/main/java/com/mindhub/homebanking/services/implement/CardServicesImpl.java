@@ -4,6 +4,7 @@ import com.mindhub.homebanking.dtos.CardDTO;
 import com.mindhub.homebanking.models.Card;
 import com.mindhub.homebanking.models.Client;
 import com.mindhub.homebanking.repository.CardRepository;
+import com.mindhub.homebanking.repository.ClientRepository;
 import com.mindhub.homebanking.services.CardService;
 import com.mindhub.homebanking.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class CardServicesImpl implements CardService {
     @Autowired
     CardRepository cardRepository;
     @Autowired
-    ClientService clientService;
+    ClientRepository clientRepository;
 
     @Override
     public void saveCard(Card card) {
@@ -28,7 +29,7 @@ public class CardServicesImpl implements CardService {
 
     @Override
     public Card getCardById(long id) {
-        return cardRepository.getById(id);
+        return cardRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -39,7 +40,7 @@ public class CardServicesImpl implements CardService {
 
     @Override
     public Set<CardDTO> getCards(Authentication authentication) {
-        Client currentClient = clientService.getClientCurrent(authentication);
+        Client currentClient = clientRepository.findByEmail(authentication.getName());
         return currentClient.getCards().stream().filter(card -> card.isEnabled() == true).map(CardDTO::new).collect(Collectors.toSet());
     }
 

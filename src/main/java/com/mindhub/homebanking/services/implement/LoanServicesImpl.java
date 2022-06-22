@@ -19,6 +19,7 @@ public class LoanServicesImpl implements LoanService {
     LoanRepository loanRepository;
     @Autowired
     ClientLoanRepository clientLoanRepository;
+    //Set<Transaction> transactions = accountRepository.getAccountById(id).getTransactions();
 
     @Override
     public List<LoanDTO> getListLoans() {
