@@ -20,7 +20,7 @@ Vue.createApp({
   methods: {
     login() {
       axios.post('/api/login', `email=${this.loginEmail}&password=${this.loginPassword}`, { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
-        .then(response => window.location.href = 'http://localhost:8080/web/accounts.html')
+        .then(response => window.location.href = '/web/accounts.html')
         .catch(error => alert('Error al iniciar sesion'))
     },
 

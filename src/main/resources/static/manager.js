@@ -13,7 +13,7 @@ Vue.createApp({
     },
 
     created() {
-        axios.get(`http://localhost:8080/api/clients`)
+        axios.get(`/api/clients`)
             .then(data => {
                 this.data = data.data
                 console.log(this.data)
@@ -31,7 +31,7 @@ Vue.createApp({
                     transactions: this.transactions,
                 }
             }
-            axios.post(`http://localhost:8080/api/clients`, this.client)
+            axios.post(`/api/clients`, this.client)
         },
     },
 

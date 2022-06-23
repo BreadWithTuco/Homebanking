@@ -19,7 +19,7 @@ Vue.createApp({
     },
 
     created() {
-        axios.get(`http://localhost:8080/api/clients/current`)
+        axios.get(`/api/clients/current`)
             .then(data => {
                 this.clients = data.data
                 this.accounts = this.clients.accounts.sort((a, b) => a.id - b.id)
@@ -37,7 +37,7 @@ Vue.createApp({
                 console.log(this.allTransactions)
                 console.log(this.totalBalance)
                 console.log(this.loans)
-                axios.get(`http://localhost:8080/api/clients/current/cards`)
+                axios.get(`/api/clients/current/cards`)
                 .then(data => {
                     this.allCards = data.data
                     this.cardsCREDIT = this.clients.card.filter(card => card.type == 'CREDIT' ? this.cardsCREDIT.push(card) : null)
@@ -55,7 +55,7 @@ Vue.createApp({
     methods: {
         logout() {
             axios.post('/api/logout')
-                .then(response => window.location.href = 'http://localhost:8080/web/login.html')
+                .then(response => window.location.href = '/web/login.html')
                 .catch(error => alert(error.message = 'No se pudo desconectar.'))
         },
 

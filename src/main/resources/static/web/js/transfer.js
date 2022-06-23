@@ -12,7 +12,7 @@ Vue.createApp({
     },
 
     created() {
-        axios.get(`http://localhost:8080/api/clients/current`)
+        axios.get(`/api/clients/current`)
             .then(data => {
                 this.clients = data.data
                 this.accounts = this.clients.accounts.sort((a, b) => a.id - b.id)
@@ -33,7 +33,7 @@ Vue.createApp({
         transfer() {
             axios.post('/api/clients/current/transactions', `amount=${this.amount}&description=${this.description}&accountOrigenNumber=${this.accountOrigenValue}&accountDestinyNumber=${this.destiny}`)
                 .then(response => {
-                    window.location.href = 'http://localhost:8080/web/accounts.html'
+                    window.location.href = '/web/accounts.html'
                     console.log('transferencia completa')
                 })
                 .catch(function (error) {

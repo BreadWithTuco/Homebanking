@@ -15,14 +15,14 @@ Vue.createApp({
 
     created() {
 
-        axios.get(`http://localhost:8080/api/clients/current`)
+        axios.get(`/api/clients/current`)
             .then(data => {
                 this.clients = data.data
                 this.accounts = this.clients.accounts
                 this.clientLoans = this.clients.loan
                 console.log(this.clients)
                 console.log(this.clientLoans)
-                axios.get(`http://localhost:8080/api/loans`)
+                axios.get(`/api/loans`)
                     .then(data => {
                         this.loans = data.data
                         console.log(this.loans)
@@ -47,7 +47,7 @@ Vue.createApp({
             axios.post('/api/loans', applyForLoan)
             .then(response => {
                 console.log('creado')
-                window.location.href = "http://localhost:8080/web/accounts.html"
+                window.location.href = "/web/accounts.html"
             })
         }
     },
